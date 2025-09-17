@@ -1,12 +1,27 @@
 import { createRoot } from "react-dom/client"
-import App from "./App"
+import Header from "./Header"
+import MainContent from "./MainContent"
+import Footer from "./Footer"
+// import { Fragment } from "react"
+
+import reactLogo from './assets/react.svg'
 
 const root = createRoot(document.getElementById("root"))
 
 
+function Page(){
+  return(
+    <>
+      <Header />
+      <MainContent />
+      <Footer />
+    </>
+
+  )
+}
 
 root.render(
-  <App />
+  <Page />
 )
 
 // function temporaryName(){

@@ -3,63 +3,41 @@
 }
 
 body {
-  margin: 0;
-  font-family: Inter, sans-serif;
-  background-color: #252D35;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #27292c;
   color: white;
 }
 
-header {
-  height: 90px;
-  background-color: #21222A;
-  padding: 30px 25px;
+h1{
+  margin-top: 30px;
 }
 
-nav {
+.header{
   display: flex;
   align-items: center;
-  height: 100%;
+  justify-content: space-between;
 }
 
-
-nav > img {
-  width: 40px;
-  margin-right: 7px;
+.nav-list {
+  list-style: none;
+  display: flex;
 }
 
-nav > span {
-  color : #61DAFB;
-  font-size: 1.4rem;
-  font-weight: 700;
-}
-main {
-  padding: 60px 30px;
-}
-
-main > h1 {
-  margin: 0;
-  font-size: 2.4rem;
-  background-image: url(Vite.js.png);
-  background-repeat: no-repeat;
-  background-position-x: right;
-  background-position-y: right 65%;
+.nav-list-item{
+  margin-right: 10px;
+  font-size: 1.1rem;
 
 }
 
-.facts-list {
-  margin-top: 46px;
-  max-width: 400px;
+.nav-logo{
+  width : 100px;
+  alt : React logo;
 }
 
-.facts-list > li {
-  padding-block : 10px;
-  line-height: 19px;
-}
 
-.facts-list > li::marker {
-  color : #61DAFB;
-  font-size: 1.5rem;
-}
+
+
 
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
