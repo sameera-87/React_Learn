@@ -7,8 +7,8 @@ export default function Entry( props ){
         <article className="journal-entry">
             <div className="main-image-container">
                 <img className="main-image" 
-                    src={ props.img.src } 
-                    alt={ props.img.alt } 
+                    src={ props.entry.img.src } 
+                    alt={ props.entry.img.alt } 
                 />
             </div>
 
@@ -16,11 +16,11 @@ export default function Entry( props ){
                 <div className="location">
                     <img className="marker-image" src= {marker} alt="map marker icon"/>
                     <span className="country">{props.country}</span>
-                    <a href={props.googleMapsLink}>View on Google Maps</a>
+                    <a href={props.entry.googleMapsLink}>View on Google Maps</a>
                 </div>
-                <h2>{props.title}</h2>
-                <p>{props.date}</p>
-                <p>{props.text}</p>
+                <h2>{props.entry.title}</h2>
+                <p>{props.entry.date}</p>
+                <p>{props.entry.text}</p>
             </div>
         </article>
     )
