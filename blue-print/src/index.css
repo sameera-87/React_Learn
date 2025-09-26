@@ -58,7 +58,38 @@ main {
   font-weight: 500;
 }
 
-add-ingredient-form > button::before {
+.add-ingredient-form > button::before {
   content: "+";
   margin-right: 5px;
+}
+
+
+.get-recipe-container {
+  display: flex;
+  background-color: azure;
+  justify-content: space-between;
+  padding: 10px;
+  border: solid 1px;
+  border-radius: 5px;
+  align-items: center;
+
+}
+
+.get-recipe-container > button {
+  font-family: Inter, sans-serif;
+  border-radius: 6px;
+  border: none;
+  background-color: #ea980b;
+  color: #171714;
+  width: 150px;
+  height: 50px;
+  font-size: 0.875rem;
+  font-weight: 500px;
+}
+
+.get-recipe-container > button:active {
+  background-color: #c77807; /* darker shade */
+  color: #100f0f; /* text turns white */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* shadow on click */
+  transform: scale(0.97); /* slight shrink for click effect */
 }
