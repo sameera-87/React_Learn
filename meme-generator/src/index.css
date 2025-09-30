@@ -1,102 +1,105 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Inter, sans-serif;
-}
-
-header {
+/* ===== HEADER STYLING ===== */
+.header {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 11px;
-  background-color: white;
-  height: 80px;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
-}
-
-header > img {
-  height: 100%;
-  padding: 5px;
-}
-
-header > h1 {
-  font-weight: 400px;  
-}
-
-main {
-  padding: 30px 30px 10px;
-}
-
-.add-ingredient-form {
-  display: flex;
-  justify-content: center;
   gap: 12px;
-  height: 38px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 12px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-.add-ingredient-form > input {
-  border-radius: 6px;
-  border: 1px solid #D1D5D8;
-  padding: 9px 13px;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-  flex-grow: 1;
-  min-width: 150px;
-  max-width: 400px;
+.header img {
+  width: 40px;
+  height: 40px;
 }
 
-.add-ingredient-form > button {
-  font-family: Inter, sans-serif;
-  border-radius: 6px;
-  border: none;
-  background-color: #141413;
-  color: #FAFAF8;
-  width: 150px;
-  font-size: 0.875rem;
-  font-weight: 500;
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
 }
 
-.add-ingredient-form > button::before {
-  content: "+";
-  margin-right: 5px;
-}
-
-
-.get-recipe-container {
+/* ===== FORM STYLING ===== */
+.form {
   display: flex;
-  background-color: azure;
-  justify-content: space-between;
-  padding: 10px;
-  border: solid 1px;
-  border-radius: 5px;
-  align-items: center;
-
+  flex-direction: column;
+  gap: 12px;
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.get-recipe-container > button {
-  font-family: Inter, sans-serif;
+.form label {
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form input {
+  padding: 8px 10px;
   border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1rem;
+}
+
+.form input:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 4px rgba(37, 117, 252, 0.4);
+}
+
+.form button {
+  padding: 10px;
   border: none;
-  background-color: #ea980b;
-  color: #171714;
-  width: 150px;
-  height: 50px;
-  font-size: 0.875rem;
-  font-weight: 500px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #2575fc;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.get-recipe-container > button:active {
-  background-color: #c77807; /* darker shade */
-  color: #100f0f; /* text turns white */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* shadow on click */
-  transform: scale(0.97); /* slight shrink for click effect */
+.form button:hover {
+  background: #1a5edb;
 }
 
-.suggested-recipe-contatiner {
-  color: #475467;
-  line-height: 28px;
-  font-size: 1.125rem;
-  font-weight: 400;
+/* ===== MEME IMAGE STYLING ===== */
+.meme {
+  position: relative;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.meme img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.meme .top,
+.meme .bottom {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Impact", "Arial Black", sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 2px 2px 4px #000;
+  letter-spacing: 1px;
+}
+
+.meme .top {
+  top: 10px;
+}
+
+.meme .bottom {
+  bottom: 10px;
 }

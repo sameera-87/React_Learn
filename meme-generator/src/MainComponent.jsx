@@ -1,44 +1,48 @@
-import React from "react"
-import IngredientsList from "./components/IngredientList"
-import ClaudeRecipe from "./components/ClaudeRecipe"
-import { getRecipeFromMistral } from "./ai"
+import {useActionState, useState} from "react"
 
-export default function MainComponent(){
+export default function Main(){
 
-    const [ingredients, setIngredients] = React.useState("")
-       
-    const [recipe, setRecipe] = React.useState(false)
+    const [meme, setMeme] = useState({
+        topText:"One does not simply",
+        bottomText:"Walk into mordor",
+        imageUrl:"http://i.imgflip.com/1big.jpg"
+    })
 
-    async function getRecipe(){
-        const recipeMarkdown = await getRecipeFromMistral(ingredients)
-        setRecipe(recipeMarkdown)
+    function handleChange(event){
+        const {value} = event.currentTarget
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            topText : value
+        }))
     }
 
-    function addIngredient(formData){
-        const newIngredient = formData.get("ingredient")
-        setIngredients(prevIngredients => [...prevIngredients, newIngredient])
-    }
-
-    return (
+    return(
         <main>
-            <form action={addIngredient} className="add-ingredient-form">
-                <input
-                    type="text"
-                    placeholder="e.g. oregano"
-                    aria-label="Add ingredient"
-                    name="ingredient"
-                />
-                <button>Add Ingredient</button>
-            </form>     
+            <div className="form">
+                <label>Top Text
+                    <input 
+                        type="text"
+                        placeholder="One does not simply"
+                        name="topText"
+                        onChange={handleChange}
+                    />
+                </label>
 
-            {ingredients.length > 0 && 
-                <IngredientsList ingredients={ingredients} 
-                getRecipe={getRecipe}                
-                />
-            }
+                <label>Bottom Text
+                    <input 
+                        type="text"
+                        placeholder="Walk into Mordor"
+                        name="bottomText"
+                    />
+                </label>
+                <button>Get a new meme image </button>
+            </div>
 
-            {recipe && <ClaudeRecipe recipe={recipe}/>}        
-            
+            <div className="meme">
+                <img src={meme.imageUrl} alt="Meme"/>
+                <span className="top">{meme.topText}</span>
+                <span className="bottom">{meme.bottomText}</span>
+            </div>
         </main>
     )
 }
