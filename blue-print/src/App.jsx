@@ -1,11 +1,24 @@
-import Header from "./Header"
-import Main from "./MainComponent"
+import React from "react"
+import padsData from "./pads"
+import Pad from "./Pad"
 
-export default function App(){
+export default function App({ darkMode}){
+
+  const [pads, setPads] = React.useState(padsData)
+
+  const styles = {
+    backgroundColor: darkMode ? "#222222" : "#cccccc"
+  }
+
+  const buttonElements = pads.map(pad => (
+    <Pad key={pad.id} color={pad.color} on={pad.on}/>
+  ))
+
   return(
-    <>
-      <Header />
-      <Main />
-    </>
+    <main>
+      <div className="pad-container">
+        {buttonElements}
+      </div>
+    </main>
   )
 }
