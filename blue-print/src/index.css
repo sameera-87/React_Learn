@@ -93,3 +93,10 @@ main {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* shadow on click */
   transform: scale(0.97); /* slight shrink for click effect */
 }
+
+.suggested-recipe-contatiner {
+  color: #475467;
+  line-height: 28px;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
