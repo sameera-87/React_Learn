@@ -1,4 +1,5 @@
 import {useActionState, useState} from "react"
+import {useEffect} from "react"
 
 export default function Main(){
 
@@ -8,8 +9,14 @@ export default function Main(){
         imageUrl:"http://i.imgflip.com/1big.jpg"
     })
 
+    useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+            .then(res => res.json())
+            .then(data => console.log(data.data.memes))
+    }, [])
+
     function handleChange(event){
-        const {value, name} = event.currentTarget
+        const {value, name} = event.target
         setMeme(prevMeme => ( {
             ...prevMeme,
             [name] : value
