@@ -1,35 +1,21 @@
-import React from "react"
+import WindowTracker from "./WindowTracker"
 
-export default function App(props){
+export default function App(){
 
-  const [starWarsData, setstarWarsData] = React.useState({})
-  const [count, setCount] = React.useState(1)
+  const [show, setShow] = React.useState(true)
 
-  console.log("Rendered")
+  function toggle() {
+    setShow(prevShow => !prevShow)
+  }
 
-  React.useEffect(() => {
-    console.log("Effect ran")
-    fetch(`https://swapi.dev/api/people/${count}`)
-      .then(res => res.json())
-      .then(data => setstarWarsData(data))
-  }, [count])
- 
-  // React.useEffect(function() {
-  //   console.log("Effect ran")
-  //   fetch("https://swapi.dev/api/people/1")
-  //     .then(res => res.json())
-  //     // .then(data => setstarWarsData(data))
-  // }, [0])
-
-
-  return(
-    <div>
-      <h2>The Count is {count}</h2>
-      <button onClick={() => setCount(prevCount => prevCount + 1)}>Get next character</button>
-      <pre>{JSON.stringify(starWarsData , null, 2)}</pre>
-    </div>
+  return (
+    <main className="container">
+      <button onClick={toggle}>
+        Toggle WindowTracker
+      </button>
+      {show && <WindowTracker />}
+    </main>
   )
+
+
 }
-
-
-// 10.22 - stop
